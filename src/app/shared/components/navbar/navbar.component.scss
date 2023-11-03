@@ -1,0 +1,97 @@
+@import '_variables';
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    height: 60px;
+    justify-content: space-between;
+    padding: 8px 5vw;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.10);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo__cont {
+    height: 100%;
+    cursor: pointer;
+
+    img {
+        height: 100%;
+    }
+}
+
+.lista_navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.button__nav {
+    display: flex;
+    flex-direction: column;
+    padding: 6% 2px 1px 2px;
+    gap: 2px;
+    background: none;
+    font-size: 11px;
+    color: $cuat_crisostomo;
+    transition: all .1s ease-in;
+    cursor: pointer;
+
+    &:hover {
+        .bottom__line {
+            background-color: $sec_crisostomo;
+        }
+            
+        color: $sec_crisostomo;
+    }
+}
+
+.bottom__line {
+    height: 4px;
+    border-radius: 5px;
+    width: 100%;
+    background-color: $white;
+    transition: all .1s ease-in;
+    cursor: pointer;
+}
+
+/* Redes Sociales */
+.redes {
+    &_sociales {
+        height: 100%;
+    }
+
+    &__list {
+        height: 100%;
+        display: flex;
+        gap: 5px;
+    }
+}
+
+.red {
+    &__item {
+        height: 100%;
+    }
+
+    &__btn {
+        height: 100%;
+        cursor: pointer;
+
+        img {
+            height: 65%;
+            transition: all .1s ease-in;
+            
+            &:hover {
+                filter: invert(30%) sepia(81%) saturate(1514%) hue-rotate(173deg) brightness(97%) contrast(99%);
+            }
+        }
+    }
+}

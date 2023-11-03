@@ -1,0 +1,85 @@
+@import '_variables';
+
+.section__proyectos {
+    padding: 40px 4vw;
+    width: 100%;
+    height: 100%;
+
+    h1 {
+        text-align: center;
+        color: $sec_crisostomo;
+        font-size: 1.8rem;
+        font-family: $extra_bold;
+    }
+}
+
+.list__cards {
+    height: 100%;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+    gap: 3vw;
+
+    @media screen and (max-width: 834px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 610px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.card {
+    height: 100%;
+
+    @media screen and (max-width: 834px) {
+        &:last-child {
+            grid-column: span 2; /* Esto hará que el último elemento ocupe dos columnas completas */
+            text-align: center; /* Para centrar el contenido horizontalmente */
+        }
+    }
+
+
+    &__btn {
+        cursor: pointer;
+        height: 100%;
+
+        &:hover {
+            filter: blur(100%);
+        }
+    }
+}
+
+.cont {
+    &__img {
+        width: 100%;
+        height: 450px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            // object-fit: cover;
+            // object-position: center center;
+            transition: all .2s ease-out;
+
+            &:hover {
+                filter: brightness(0.7);
+            }
+        }
+    }
+
+    &__promocion {
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        color: $white;
+        padding: 10px 20px;
+    }
+}

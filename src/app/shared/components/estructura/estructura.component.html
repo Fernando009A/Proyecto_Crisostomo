@@ -1,0 +1,33 @@
+<section *ngIf="estructura" class="section__estructura">
+    <ul class="list__estructura">
+        <li class="lotes__area">
+            <h3>Área</h3>
+            <h2>{{ estructura.area }}<span>has</span></h2>
+        </li>
+        <li class="lotes__totaletapas">
+            <h3>Etapas</h3>
+            <h2>{{ estructura.etapas.length }}</h2>
+        </li>
+        <li class="lotes__total">
+            <h3>Nro Lotes</h3>
+            <h2>{{ estructura.etapas | totalLotes }}</h2>
+        </li>
+        <li class="lotes__desde">
+            <h3>Lotes Desde</h3>
+            <h2>{{ estructura.lotes.desde }}<span>m<sup>2</sup></span></h2>
+        </li>
+        <li class="lotes__hasta">
+            <h3>Lotes Hasta</h3>
+            <h2>{{ estructura.lotes.hasta }}<span>m<sup>2</sup></span></h2>
+        </li>
+    </ul>
+    <div class="info__etapas">
+        <h3 class="info__titulo">Total de Lotes por Etapas</h3>
+        <ul class="list__estructura">
+            <li *ngFor="let etapa of estructura.etapas" class="lotes__etapa">
+                <h3>{{ etapa.numero }}</h3>
+                <h2>{{ etapa.total }}</h2>
+            </li>
+        </ul>
+    </div>
+</section>

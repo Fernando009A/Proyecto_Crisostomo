@@ -1,0 +1,26 @@
+<header class="header">
+    <button aria-label="boton_index" routerLink="/" class="logo__cont">
+        <img src="assets/img/logos/logo_crisostomo.png" alt="">
+    </button>
+
+    <nav class="navegacion">
+        <ul class="lista_navegacion">
+            <li *ngFor="let nav of list_navegacion">
+                <button aria-label="boton_navegacion" [routerLink]="nav.url" (click)="scrollToTop()" class="button__nav">
+                    <h2>{{ nav.nombre }}</h2>
+                    <div class="bottom__line"></div>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="redes_sociales">
+        <ul class="redes__list">
+            <li class="red__item" *ngFor="let red of list_redes">
+                <button aria-label="boton_red_social" (click)="abrirEnOtraPestana(red.link)" class="red__btn">
+                    <img [src]="red.logo" alt="">
+                </button>
+            </li>
+        </ul>
+    </div>
+</header>

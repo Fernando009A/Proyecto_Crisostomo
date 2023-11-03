@@ -1,0 +1,328 @@
+@import '_variables';
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-family: $extra_bold;
+    // color: $prim_prado;
+    margin-top: 45px;
+    font-size: 40px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+    }
+}
+
+h2 {
+    margin-top: 5px;
+    font-family: $bold;
+    // color: $sec_prado;
+    padding: 0 20vw;
+    font-size: 20px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 15px;
+        padding: 0 10vw;
+    }
+}
+
+.al {
+    display: flex;
+    text-align: center;
+    gap: 15px;
+}
+
+.section {
+    &__ubicacion {
+        padding: 0 5vw 20px 5vw;
+        margin-bottom: 40px;
+
+        .info__ubicacion {
+            display: grid;
+            grid-template-columns: 4fr 2fr;
+            gap: 25px;
+
+            @media screen and (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cont__img {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__caracteristicas {
+        padding: 20px 10vw 60px 10vw;
+        // background: $terc_prado;
+        h3 {
+            margin-bottom: 5px;
+        }
+        h3, h4 {
+            color: $white;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 400;
+            padding: 0 0 0 45px;
+        }
+    }
+
+    &__informacion {
+        padding: 10px 10vw 60px 10vw;
+
+        h3, h4 {
+            color: $white;
+
+            span {
+                margin-left: 10px;
+                font-weight: 300;
+            }
+        }
+
+        h3 {
+            @media screen and (max-width: 550px) {
+                font-size: 17px;
+                overflow: hidden;
+            }
+
+            @media screen and (max-width: 410px) {
+                font-size: 15px;
+            }
+        }
+
+        h3:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    &__plano {
+        padding: 30px 5vw;
+        width: 100%;
+        height: 100%;
+        margin: 40px 0;
+        text-align: center;
+
+        @media screen and (max-width: 768px) {
+            padding: 30px 2vw;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__legal {
+        padding: 30px 10vw;
+
+        div {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            
+            h4 {
+                margin-left: 20px;
+                font-weight: 400;
+            }
+
+            span {
+                margin-left: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__precios {
+        padding: 30px 5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 100%;
+
+        .subtitulo {
+            margin-bottom: 10px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            span {
+                color: $negro;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__cuentas {
+        .cont__img {
+            width: 120px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__contacto {
+        div {
+            text-align: center;
+            padding: 0 15vw;
+
+            @media screen and (max-width: 428px) {
+                padding: 0 5vw;
+            }
+
+            .titulo__asesoramiento {
+                font-size: 30px;
+                padding: 0;
+                margin: 60px 0 10px 0;
+                @media screen and (max-width: 768px) {
+                    font-size: 21px;
+                }
+
+                @media screen and (max-width: 428px) {
+                    font-size: 17px;
+                }
+            }
+
+            h4 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 300;
+                margin: 0 0 20px 0;
+
+                @media screen and (max-width: 768px) {
+                    font-size: 17px;
+                }
+                
+                @media screen and (max-width: 428px) {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+.cont__tabla {
+    width: 100%;
+    overflow-x:auto;
+}
+
+.tabla {
+    border-collapse: collapse;
+    width: 100%;
+    // th:not(:first-child), td {
+    //     border: 1px solid $sec_crisostomo;
+    // }
+    thead {
+        color: $white;
+        th:not(:first-child) {
+            // background-color: $cuat_crisostomo;
+            padding: 5px 40px;
+        }
+    }
+
+    tbody {
+        color: $negro;
+        td {
+            // background-color: lighten($sec_crisostomo, 60);
+            padding: 5px 15px;
+            text-align: center;
+
+            &:first-child {
+                // background-color: $cuat_crisostomo;
+                color: $white;
+                padding: 0 40px;
+                text-align: left;
+                width: 300px;
+            }
+        }
+    }
+}
+
+.subtitulo {
+    margin: 50px 0 30px 0;
+    font-size: 25px;
+    font-family: $extra_bold;
+}
+
+.list {
+    &__caracteristicas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        .cont__img {
+            height: 25px;
+
+            img {
+                height: 100%;
+                filter: invert(90%);
+            }
+        }
+    }
+
+    &__cuentas {
+        margin: 30px 0 40px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 70px;
+
+        @media screen and (max-width: 388px) {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    &__ubicacion {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+
+        h3 {
+            font-family: $bold;
+        }
+    }
+
+}
+
+.img__caracteristicas {
+    background-color: darken($sec_prado, 10);
+}
+
+.carac {
+    &__principal {
+        color: $negro;
+        font-weight: bold;
+        text-align: left;
+
+        @media screen and (max-width: 384px) {
+            font-size: 17px;
+        }
+    }
+
+    &__secundaria {
+        color: lighten($negro, 10);
+
+        @media screen and (max-width: 768px) {
+            // display: none;
+        }
+    }
+}

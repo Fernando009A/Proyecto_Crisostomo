@@ -1,0 +1,10 @@
+<section class="section__galeria">
+    <div class="cont__img-principal">
+        <img [src]="imagenPrincipal" alt="">
+    </div>
+    <ul class="list__imagenes">
+        <li (click)="changeImage(imagen.url)" class="cont__img-secundaria" *ngFor="let imagen of listImagenes">
+            <img [src]="imagen.url" alt="">
+        </li>
+    </ul>
+</section>

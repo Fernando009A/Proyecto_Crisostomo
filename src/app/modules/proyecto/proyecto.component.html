@@ -1,0 +1,178 @@
+<div *ngIf="infoProyecto">
+    <h1 #titulo>{{ infoProyecto.nombre }} </h1>
+    <h2 #subtitulo>{{ infoProyecto.resumen }}</h2>
+    <app-galeria [listImagenes]="infoProyecto.imagenes"></app-galeria>
+    <app-estructura [estructuraProyecto]="infoProyecto.estructura"></app-estructura>
+    <section class="section__ubicacion">
+        <h2 #subtitulo class="subtitulo">Ubicacion</h2>
+        <div class="info__ubicacion">
+            <div class="cont__img">
+                <img [src]="infoProyecto.ubicacion.img" alt="">
+            </div>
+            <ul class="list__ubicacion">
+                <li>
+                    <h3>Localizacion:</h3>
+                    <span>{{ infoProyecto.ubicacion.localizacion }}</span>
+                </li>
+                <li>
+                    <h3>Dirección:</h3>
+                    <span>{{ infoProyecto.ubicacion.direccion }}</span>
+                </li>
+                <li>
+                    <h3>Referencia:</h3>
+                    <span>{{ infoProyecto.ubicacion.referencias }}</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section #bgCaracteristica class="section__caracteristicas">
+        <h2 #subtitulo class="subtitulo">Beneficios</h2>
+        <ul class="list__caracteristicas">
+            <li *ngFor="let item of infoProyecto.caracteristicas" class="caracteristicas">
+                <div class="al">
+                    <div class="cont__img">
+                        <img [src]="item.logo" alt="">
+                    </div>
+                    <h3 class="carac__principal">{{ item.caracteristica }}</h3>
+                </div>
+                <!-- CM: Parte de Informacion Adicional de cada caracteristica, si la tiene -->
+                <ul *ngIf="item.adicional">
+                    <li class="carac__secundaria"  *ngFor="let a of item.adicional">
+                        <h4>- {{ a }}</h4>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="section__precios">
+        <h2 #subtitulo class="subtitulo">Precio de Lotes</h2>
+        <div>
+            <h3 #subtitulo2>Precios por Lotes</h3>
+            <div class="cont__tabla">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th #linea #prim>Mínimo</th>
+                            <th #linea #prim>Promédio</th>
+                            <th #linea #prim>Máximo</th>
+                        </tr>   
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of infoProyecto.aspectoComercial.precio">
+                            <td #linea #prim>{{ item.etapa }}</td>
+                            <td #linea #sec>S/.{{ item.minimo | number: '3.2-2' }}</td>
+                            <td #linea #sec>S/.{{ item.promedio | number: '3.2-2' }}</td>
+                            <td #linea #sec>S/.{{ item.maximo | number: '3.2-2' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <h3 #subtitulo2>Inicial</h3>
+            <div class="cont__tabla">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th #linea #prim>Porcentaje</th>
+                            <th #linea #prim>Cuota Inicial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of infoProyecto.aspectoComercial.inicial">
+                            <td #linea #prim>{{ item.etapa }}</td>
+                            <td #linea #sec>{{ item.porcentaje }}%</td>
+                            <td #linea #sec>S/.{{ item.pagoInicial | number: '3.2-2' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <h3 #subtitulo2>Cuotas</h3>
+            <div class="cont__tabla">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th #linea #prim>Desde</th>
+                            <th #linea #prim>Hasta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of infoProyecto.aspectoComercial.cuotas">
+                            <td #linea #prim>{{ item.etapa }}</td>
+                            <td #linea #sec>S/.{{ item.pagoCuota | number: '3.2-2' }} por cuota</td>
+                            <td #linea #sec>{{ item.hasta  }} cuotas Mensuales</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <h3 #subtitulo2>Separación: <span>{{ infoProyecto.aspectoComercial.separacion }} ({{ infoProyecto.aspectoComercial.adicional }})</span></h3>
+            <h3 #subtitulo2>Intereses <span>{{ infoProyecto.aspectoComercial.intereses }}</span></h3>
+        </div>
+    </section>
+
+    <section class="section__legal">
+        <h2 #subtitulo class="subtitulo">Aspecto Legal</h2>
+        <div>
+            <h3 #subtitulo2>Proyecto</h3>
+            <h4>-{{ infoProyecto.aspectoLegal.proyecto }}</h4>
+        </div>
+        <div>
+            <h3 #subtitulo2>Lotes</h3>
+            <h4>-{{ infoProyecto.aspectoLegal.lotes }}</h4>
+        </div>
+        <div>
+            <h3 #subtitulo2>Contactos</h3>
+            <div *ngFor="let contrato of infoProyecto.aspectoLegal.contratos">
+                <h4>-{{ contrato.nombre }}: <span>{{ contrato.descripcion }}</span></h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__plano">
+        <img [src]="infoProyecto.estructura.img" alt="">
+    </section>
+
+    <section class="section__cuentas">
+        <h2 #subtitulo class="subtitulo">Cuentas de Deposito</h2>
+        <ul class="list__cuentas">
+            <li *ngFor="let cuenta of infoProyecto.informacion.cuentasDeposito">
+                <div class="cont__img">
+                    <img [src]="cuenta.img" alt="">
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section #bgCaracteristica class="section__informacion">
+        <h2 #subtitulo class="subtitulo">Información</h2>
+        <div>
+            <h3>Empresa: <span>{{ infoProyecto.informacion.empresa }}</span></h3>
+            <h3>RUC: <span>{{ infoProyecto.informacion.ruc }}</span></h3>
+            <h3>Nro Partida: <span>{{ infoProyecto.informacion.numeroPartida }}</span></h3>
+            <h3>Fecha de Entrega: <span>{{ infoProyecto.informacion.entrega | date:'d \'de\' MMMM \'del\' y' }}</span></h3>
+            <h3>Periodo de Gracia: <span>{{ infoProyecto.informacion.pGracia | date:'d \'de\' MMMM \'del\' y' }}</span></h3>
+            <h3>Zorem: <span>{{ infoProyecto.informacion.zorem }}</span></h3>
+        </div>
+    </section>
+
+    <section class="section__contacto">
+        <div>
+            <h2 #subtitulo2 class="titulo__asesoramiento">Te asesoramos para escoger tu mejor opción</h2>
+            <h4 class="subtitulo" #subtitulo>Ponemos a su disposición un equipo altamente capacitado que resolverá
+            cualquier duda o consulta.</h4>
+        </div>
+        <app-contacto [imagenInput]="infoProyecto.imagenes[3]"></app-contacto>
+    </section>
+</div>

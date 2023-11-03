@@ -1,0 +1,112 @@
+@import '_variables';
+
+.list__estructura {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width:620px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 408px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section__estructura {
+    padding: 60px 5vw;
+    // background-image: url('./../../../../assets/img/logos/lineas.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.lotes {
+    &__desde, &__hasta, &__totaletapas, &__area, &__total, &__etapa {
+        border-radius: 10px;
+        border: 1px solid $gris;
+        height: 100%;
+        position: relative;
+        display: inline-block;
+        h3 {
+            background-color: $cuat_crisostomo;
+            border-radius: 10px;
+            padding: 8px 20px;
+            color: $white;
+            display: inline-block;
+            position: absolute;
+            top: -15px;
+            left: -15px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+                padding: 5px 10px;
+            }
+
+            @media screen and (max-width: 444px) {
+                font-size: 15px;
+                padding: 5px 10px;
+            }
+        }
+
+        h2 {
+            font-family: $extra_bold;
+            font-size: 60px;
+            text-align: center;
+            margin-top: 20px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 30px;
+            }
+
+            @media screen and (max-width: 444px) {
+                font-size: 25px;
+            }
+        }
+
+        span {
+            font-size: 25px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 444px) {
+                font-size: 15px;
+            }
+        }
+    }
+
+    &__desde, &__hasta, &__area, &__total {
+        padding: 0 30px;
+    }
+
+    &__totaletapas {
+        padding: 0 40px;
+    }
+
+    &__etapa {
+        padding: 0 60px;
+    }
+}
+
+.info {
+    &__etapas {
+        margin-top: 30px;
+    }
+    &__titulo {
+        margin-bottom: 25px;
+        font-size: 25px;
+        font-family: $extra_bold;
+        text-align: center;
+        font-weight: bold;
+        color: $cuat_crisostomo;
+    }
+}

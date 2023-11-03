@@ -1,0 +1,12 @@
+<section class="section__proyectos">
+    <h1>Tenemos el Proyecto que estas Buscando</h1>
+    <ul class="list__cards">
+        <li *ngFor="let proyecto of listCards" class="card">
+            <button aria-label="boton_proyecto" (click)="scrollToTop" [routerLink]="'proyecto/'+proyecto.id" class="card__btn">
+                <div class="cont__img">
+                    <img [src]="proyecto.imgCard" alt="">
+                </div>
+            </button>
+        </li>
+    </ul>
+</section>

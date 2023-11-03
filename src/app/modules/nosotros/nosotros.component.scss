@@ -1,0 +1,202 @@
+@import '_variables';
+
+.section {
+
+    &__historia {
+        height: 90vh;
+        width: 100%;
+        position: relative;
+
+        img {
+            object-fit: cover;
+            object-position: center top;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__imagen {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 70px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__nosotros {
+        padding: 35px 13vw;
+    }
+
+    &__valores {
+        padding: 35px 8vw;
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            color: $sec_crisostomo;
+            font-family: $bold;
+            // font-weight: bold;
+        }
+    }
+
+    &__oficinas {
+        padding: 60px 18vw;
+    }
+}
+
+.cont__info {
+    position: absolute;
+    top: 25%;
+    left: 60px;
+    width: 40%;
+    text-align: center;
+
+    h1 {
+        font-weight: 900;
+        font-size: 60px;
+        margin-bottom: 15px;
+        font-family: $extra_bold;
+    }
+
+    h1, h2 {
+        color: $cuat_crisostomo;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    span {
+        color: $prim_crisostomo;
+        font-family: $extra_bold;
+    }
+
+    p {
+        text-align: justify;
+        text-align-last: center;
+    }
+}
+
+.list {
+    &__nosotros {
+        margin-top: 70px;
+        background-color: $cuat_crisostomo;
+        display: flex;
+        align-items: center;
+    }
+
+    &__valores {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3vw;
+        margin: 30px 0 20px 0;
+    }
+
+    &__oficinas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: lighten($gris, 40);
+        position: relative;
+    }
+}
+
+.mision-vision {
+    padding: 50px 70px;
+    text-align: center;
+
+    &:not(:first-child) {
+        border-left: 2px solid $gris;
+    }
+
+    h2 {
+        color: $white;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: darken($white, 20);
+    }
+}
+
+.card__valor {
+    position: relative;
+    background: $cuat_crisostomo;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: $terc_crisostomo;
+    font-size: 15px;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    &:hover {
+        img {
+            opacity: 0.8;
+        }
+    }
+
+    h3 {
+        position: absolute;
+        color: $white;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        padding: 0 15px;
+        font-size: 20px;
+        background: $cuat_crisostomo;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        opacity: 0.5;
+    }
+}
+
+.card__oficina {
+    padding: 35px 50px;
+    text-align: center;
+
+    h3, p {
+        font-size: 12px;
+        color: lighten($negro, 20);
+    }
+
+    svg {
+        fill: #ffa217; 
+    }
+
+    h2 {
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffa217;
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin-top: 5px;
+        color: $sec_crisostomo;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.linea {
+    height: 70%;
+    width: 2px;
+    background: #ffa217;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+}

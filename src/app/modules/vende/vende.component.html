@@ -1,0 +1,169 @@
+<div class="cont__info">
+    <h1>Vende tu <span>Terreno</span></h1>
+    <h2>Completa el formulario a continuación y nuestros asesores te contactarán para ayudarte a vender tu terreno de manera exitosa. Te ofrecemos un servicio de calidad y una experiencia sin igual en el proceso de venta de propiedades.</h2>
+</div>
+<section class="section__contacto">
+    <div class="cont__img">
+        <img src="./../../../assets/img/proyectos/arboleda/9.webp" alt="">
+    </div>
+    <form [formGroup]="formContacto" class="form">
+        <div>
+            <h3>Datos Personales</h3>
+            <div class="mitad">
+                <!-- CM: Field Nombres -->
+                <div class="form__field">
+                    <label for="nombre" >Nombres: 
+                        <span
+                            *ngIf="nombre?.errors?.['required'] && nombre?.touched"
+                            class="msg-error"
+                            >(Campo Obligatorio)</span
+                        >
+                    </label>
+                    <input 
+                        type="text"
+                        id="nombre"
+                        placeholder="Ingrese su Nombre"
+                        formControlName="nombre"
+                    >
+                </div>
+            
+                <!-- CM: Field Apellidos -->
+                <div class="form__field">
+                    <label for="apellidos">Apellidos:
+                        <span
+                            *ngIf="apellidos?.errors?.['required'] && apellidos?.touched"
+                            class="msg-error"
+                            >(Campo Obligatorio)</span
+                        >
+                    </label>
+                    <input
+                        type="text"
+                        id="apellidos"
+                        placeholder="Ingrese sus apellidos"
+                        formControlName="apellidos"
+                    >
+                </div>
+            </div>
+        
+            <div class="mitad">
+                <!-- CM: Field Dni -->
+                <div class="form__field">
+                    <label for="dni">DNI:
+                        <span
+                            *ngIf="dni?.errors?.['required'] && dni?.touched"
+                            class="msg-error"
+                            >(Campo Obligatorio)</span
+                        >
+                    </label>
+                    <input
+                        type="text"
+                        id="dni"
+                        placeholder="Ingrese su Dni"
+                        formControlName="dni"
+                    >
+                </div>
+
+                <!-- CM: Filed Ciudad -->
+                <div class="form__field">
+                    <label for="ciudad">Ciudad:
+                        <span
+                            *ngIf="ciudad?.errors?.['required'] && ciudad?.touched"
+                            class="msg-error"
+                            >(Campo Obligatorio)</span
+                        >
+                    </label>
+                    <select id="ciudad" formControlName="ciudad">
+                        <option value="0" disabled selected>Seleccione una Ciudad</option>
+                        <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ ciudad.ciudad }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Datos de Contacto</h3>
+            <div class="mitad">
+                <!-- CM: Field Nro Celular -->
+                <div class="form__field">
+                    <label for="celular">Nro Celular:
+                        <span
+                            *ngIf="celular?.errors?.['required'] && celular?.touched"
+                            class="msg-error"
+                            >(Campo Obligatorio)</span
+                        >
+                    </label>
+                    <input
+                        type="text"
+                        id="celular"
+                        placeholder="Ingrese su Nro Celular"
+                        formControlName="celular"
+                    >
+                </div>
+                <!-- CM: Field Nro Celular 2 -->
+                <div class="form__field">
+                    <label for="celular2">Nro Celular 2 (Opcional):
+                    </label>
+                    <input
+                        type="text"
+                        id="celular2"
+                        placeholder="Ingrese su Nro Celular"
+                        formControlName="celular2"
+                    >
+                </div>
+            </div>
+
+            <!-- CM: Field Correo -->
+            <div class="form__field">
+                <label for="correo">Correo:
+                    <span
+                        *ngIf="correo?.errors?.['required'] && correo?.touched"
+                        class="msg-error"
+                        >(Campo Obligatorio)</span
+                    >
+                </label>
+                <input
+                    type="text"
+                    id="correo"
+                    placeholder="Ingrese su Correo"
+                    formControlName="correo"
+                >
+            </div>
+        </div>
+
+        <div>
+            <h3>Información del Terreno</h3>
+            <!-- CM: Field Mensaje Adicional -->
+            <div class="form__field">
+                <label for="mensaje">Mensaje:</label>
+                <textarea
+                    id="mensaje"
+                    placeholder="Ingrese su Mensaje Adicional"
+                    formControlName="mensaje"
+                ></textarea>
+            </div>
+
+            <div class="mitad">
+                <!-- CM: Field Nro Celular -->
+                <div class="form__field">
+                    <label for="precio">Precio del Terreno:
+                        <span
+                            *ngIf="precio?.errors?.['required'] && precio?.touched"
+                            class="msg-error"
+                            >(Campo Obligatorio)</span
+                        >
+                    </label>
+                    <input
+                        type="text"
+                        id="precio"
+                        placeholder="Ingrese el precio del terreno"
+                        formControlName="precio"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div class="cont__btn">
+            <button>Enviar</button>
+        </div>
+    </form>
+</section>

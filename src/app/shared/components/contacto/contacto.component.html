@@ -1,0 +1,123 @@
+<section class="section__contacto">
+    <div class="cont__img">
+        <img [src]="imagenPrincipal" alt="">
+    </div>
+    <form [formGroup]="formContacto" class="form">
+        <div class="mitad">
+            <!-- CM: Field Nombres -->
+            <div class="form__field">
+                <label for="nombre" >Nombres: 
+                    <span
+                        *ngIf="nombre?.errors?.['required'] && nombre?.touched"
+                        class="msg-error"
+                        >(Campo Obligatorio)</span
+                    >
+                </label>
+                <input 
+                    type="text"
+                    id="nombre"
+                    placeholder="Ingrese su Nombre"
+                    formControlName="nombre"
+                >
+            </div>
+        
+            <!-- CM: Field Apellidos -->
+            <div class="form__field">
+                <label for="apellidos">Apellidos:
+                    <span
+                        *ngIf="apellidos?.errors?.['required'] && apellidos?.touched"
+                        class="msg-error"
+                        >(Campo Obligatorio)</span
+                    >
+                </label>
+                <input
+                    type="text"
+                    id="apellidos"
+                    placeholder="Ingrese sus apellidos"
+                    formControlName="apellidos"
+                >
+            </div>
+        </div>
+    
+        <div class="mitad">
+            <!-- CM: Field Dni -->
+            <div class="form__field">
+                <label for="dni">Dni:
+                    <span
+                        *ngIf="dni?.errors?.['required'] && dni?.touched"
+                        class="msg-error"
+                        >(Campo Obligatorio)</span
+                    >
+                </label>
+                <input
+                    type="text"
+                    id="dni"
+                    placeholder="Ingrese su Dni"
+                    formControlName="dni"
+                >
+            </div>
+            <!-- CM: Field Nro Celular -->
+            <div class="form__field">
+                <label for="celular">Nro Celular:
+                    <span
+                        *ngIf="celular?.errors?.['required'] && celular?.touched"
+                        class="msg-error"
+                        >(Campo Obligatorio)</span
+                    >
+                </label>
+                <input
+                    type="text"
+                    id="celular"
+                    placeholder="Ingrese su Nro Celular"
+                    formControlName="celular"
+                >
+            </div>
+        </div>
+
+        <!-- CM: Field Correo -->
+        <div class="form__field">
+            <label for="correo">Correo:
+                <span
+                    *ngIf="correo?.errors?.['required'] && correo?.touched"
+                    class="msg-error"
+                    >(Campo Obligatorio)</span
+                >
+            </label>
+            <input
+                type="text"
+                id="correo"
+                placeholder="Ingrese su Correo"
+                formControlName="correo"
+            >
+        </div>
+
+        <!-- CM: Filed Ciudad -->
+        <div class="form__field">
+            <label for="ciudad">Ciudad:
+                <span
+                    *ngIf="ciudad?.errors?.['required'] && ciudad?.touched"
+                    class="msg-error"
+                    >(Campo Obligatorio)</span
+                >
+            </label>
+            <select id="ciudad" formControlName="ciudad">
+                <option value="0" disabled selected>Seleccione una Ciudad</option>
+                <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ ciudad.ciudad }}</option>
+            </select>
+        </div>
+    
+        <!-- CM: Field Mensaje Adicional -->
+        <div class="form__field">
+            <label for="mensaje">Mensaje:</label>
+            <textarea
+                id="mensaje"
+                placeholder="Ingrese su Mensaje Adicional"
+                formControlName="mensaje"
+            ></textarea>
+        </div>
+
+        <div class="cont__btn">
+            <button>Enviar</button>
+        </div>
+    </form>
+</section>
