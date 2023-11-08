@@ -1,12 +1,19 @@
 @import '_variables';
 
+.section__estructura {
+    padding: 60px 5vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .list__estructura {
     width: 100%;
     display: flex;
     gap: 25px;
     justify-content: center;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 820px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
@@ -16,16 +23,8 @@
     }
 
     @media screen and (max-width: 408px) {
-        grid-template-columns: 1fr;
+        gap: 25px 15px;
     }
-}
-
-.section__estructura {
-    padding: 60px 5vw;
-    // background-image: url('./../../../../assets/img/logos/lineas.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 .lotes {
@@ -35,6 +34,7 @@
         height: 100%;
         position: relative;
         display: inline-block;
+        
         h3 {
             background-color: $cuat_crisostomo;
             border-radius: 10px;
@@ -51,8 +51,8 @@
             }
 
             @media screen and (max-width: 444px) {
-                font-size: 15px;
-                padding: 5px 10px;
+                font-size: 13px;
+                padding: 5px 8px;
             }
         }
 
@@ -64,6 +64,7 @@
 
             @media screen and (max-width: 768px) {
                 font-size: 30px;
+                margin-top: 15px;
             }
 
             @media screen and (max-width: 444px) {
@@ -90,6 +91,15 @@
 
     &__totaletapas {
         padding: 0 40px;
+    }
+
+    &__hasta, &__hasta {
+        @media screen and (max-width: 620px) {
+            &:last-child {
+                grid-column: span 2; /* Esto hará que el último elemento ocupe dos columnas completas */
+                text-align: center; /* Para centrar el contenido horizontalmente */
+            }
+        }
     }
 
     &__etapa {

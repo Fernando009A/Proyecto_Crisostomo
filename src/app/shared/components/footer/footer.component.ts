@@ -10,10 +10,17 @@ import { IRedesInterface } from 'src/app/core/models/IRedes.interface';
 })
 export class FooterComponent {
 
+  /**
+  * Propiedad decorada con @ViewChildren que recopila una lista de elementos del DOM
+  * que coinciden con el selector 'lista' en el componente.
+  */
   @ViewChildren('lista') mylista!: QueryList<ElementRef>
 
   constructor(private renderer2: Renderer2) { }
 
+  /**
+  * Lista de elementos de navegación relacionados con la compañía.
+  */
   list_compania: INavegacionInterface[] = [
     {
       id: 1,
@@ -37,6 +44,9 @@ export class FooterComponent {
     },
   ];
 
+  /**
+  * Lista de elementos de navegación relacionados con el soporte y políticas.
+  */
   list_soporte: INavegacionInterface[] = [
     {
       id: 1,
@@ -60,6 +70,9 @@ export class FooterComponent {
     },
   ]
 
+  /**
+  * Lista de direcciones con enlaces a ubicaciones en Google Maps.
+  */
   list_direcciones: IDireccionInterface[] = [
     {
       id: 1,
@@ -73,6 +86,9 @@ export class FooterComponent {
     },
   ]
 
+  /**
+  * Lista de enlaces a redes sociales con sus respectivos nombres e imágenes de logotipos.
+  */
   list_redes: IRedesInterface[] = [
     {
       id: 1,
@@ -100,22 +116,29 @@ export class FooterComponent {
     },
   ];
 
+  /**
+  * Propiedad que almacena el ancho de la pantalla actual.
+  */
   public getScreenWidth = window.innerWidth;
-  public getScreenHeight = window.innerHeight;
 
+  /**
+  * Método que se ejecuta en respuesta al evento de redimensionamiento de la ventana.
+  * Actualiza el ancho de la pantalla y controla la visibilidad de elementos en función del ancho de pantalla.
+  * @param $event Evento de redimensionamiento de la ventana.
+  */
   @HostListener('window:resize', ['$event'])
     onWindowResize() {
     this.getScreenWidth = window.innerWidth;
-    this.getScreenHeight = window.innerHeight;
 
+    // Obtener una lista de elementos usando QueryList<ElementRef>
     const listaElements: QueryList<ElementRef> = this.mylista;
     if (this.getScreenWidth > 480) {
-
       // Itera sobre los elementos y establece el estilo en 'block' para cada uno
       listaElements.forEach((element) => {
         this.renderer2.setStyle(element.nativeElement, 'display', 'block');
       });
     } else {
+      // Itera sobre los elementos y establece el estilo en 'none' para cada uno
       listaElements.forEach((element, index) => {
         this.renderer2.setStyle(element.nativeElement, 'display', 'none');
       });
@@ -141,7 +164,6 @@ export class FooterComponent {
         if (index == n) {
           // Si el índice coincide con el número pasado como parámetro, establece display en 'block'
           this.renderer2.setStyle(element.nativeElement, 'display', 'block');
-          console.log(index, n);
         } else {
           // Si no coincide, establece display en 'none'
           this.renderer2.setStyle(element.nativeElement, 'display', 'none');

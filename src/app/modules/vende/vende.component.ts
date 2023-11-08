@@ -10,15 +10,35 @@ import { ListaCiudades } from 'src/app/mocks/ciudades.mock';
   styleUrls: ['./vende.component.scss']
 })
 export class VendeComponent implements OnInit {
-// CM: El elemento padre transmite la informacion
+  
+  /**
+  * Propiedad de entrada que recibe un objeto de tipo `IImagenInterface` o `undefined`.
+  * Contiene información sobre la imagen relacionada con el formulario de contacto.
+  */
   @Input() imagenInput: IImagenInterface | undefined;
+
+  /**
+  * Propiedad que almacena la URL de la imagen principal, inicializada como `undefined`.
+  */
   imagenPrincipal: string | undefined;
+  
+  /**
+  * Arreglo de ciudades de tipo `ICiudadesInterface`, inicializado con valores de `ListaCiudades`.
+  */
   ciudades: ICiudadesInterface[] = ListaCiudades;
 
+  /**
+  * Formulario de contacto de tipo `FormGroup` que se inicializa vacío.
+  */
   formContacto: FormGroup = new FormGroup({});
 
   constructor(private formBuilder:FormBuilder) {}
 
+  /**
+  * Método del ciclo de vida llamado cuando se inicializa el componente.
+  * - Se crea un formulario utilizando el formulario `formBuilder`, con validaciones para los campos.
+  * - Se asigna el valor de `imagenInput.url` a `imagenPrincipal` si `imagenInput` tiene un valor.
+  */
   ngOnInit(): void {
     this.formContacto = this.formBuilder.group(
       {
@@ -36,7 +56,6 @@ export class VendeComponent implements OnInit {
     )
 
     if(this.imagenInput) {
-      console.log(this.imagenInput);
       this.imagenPrincipal = this.imagenInput.url
     }
   }

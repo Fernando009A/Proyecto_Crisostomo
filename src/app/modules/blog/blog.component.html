@@ -1,0 +1,33 @@
+<section class="section__inicio">
+    
+</section>
+
+<section class="section__inversiones">
+    <h2>Ventajas de <span>Comprar un</span> Terreno</h2>
+    <ul class="list__consejos-i">
+        <li *ngFor="let consejo of consejosInversiones">
+            <img [src]="consejo" alt="">
+        </li>
+    </ul>
+</section>
+
+<section class="section__ventajas">
+    <h2>Ventajas de <span>Comprar un</span> Terreno</h2>
+    <ul class="list__ventajas">
+        <li *ngFor="let ventaja of ventajas">
+            <img [src]="ventaja" alt="">
+        </li>
+    </ul>
+</section>
+
+<section class="section__info-compra">
+    <h2>Consejos para Comprar tu <span>Hogar Ideal</span></h2>
+    <p>Bienvenido a nuestra sección dedicada a la compra de viviendas. Aquí encontrarás consejos valiosos para ayudarte a encontrar la casa de tus sueños. Ya sea que estés buscando tu primera vivienda, una propiedad de inversión o un cambio de residencia, te ofrecemos orientación sobre cómo hacer de la compra de una vivienda una experiencia exitosa.</p>
+
+    <ul>
+        <li *ngFor="let item of consejosCompra">
+            <h3>{{ item.id }}.- {{ item.titulo }}</h3>
+            <p>{{ item.descripcion }}</p>
+        </li>
+    </ul>
+</section>

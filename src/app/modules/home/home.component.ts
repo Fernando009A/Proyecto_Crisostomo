@@ -12,31 +12,31 @@ export class HomeComponent {
       id: 1,
       nombre: 'Elige la mejor ubicación',
       texto: 'Te asesoramos para encontrar tu lote',
-      img: ''
+      img: 'assets/img/logos/paso1.svg'
     },
     {
       id: 2,
       nombre: 'Separa tu lote ¡Hoy!',
       texto: 'A precios increibles',
-      img: ''
+      img: 'assets/img/logos/paso2.svg'
     },
     {
       id: 3,
       nombre: 'Elige tu plan de cuotas',
       texto: 'Aprovecha las facturas de pago',
-      img: ''
+      img: 'assets/img/logos/paso3.svg'
     },
     {
       id: 4,
       nombre: 'Firmado de contrato',
       texto: 'Disfruta todos los beneficios',
-      img: ''
+      img: 'assets/img/logos/paso4.svg'
     },
     {
       id: 5,
       nombre: 'Copia Literal',
       texto: 'Totalmente Saneado',
-      img: ''
+      img: 'assets/img/logos/paso5.svg'
     },
   ]
 

@@ -6,7 +6,6 @@ h1, h2 {
 
 h1 {
     font-family: $extra_bold;
-    // color: $prim_prado;
     margin-top: 45px;
     font-size: 40px;
 
@@ -18,7 +17,6 @@ h1 {
 h2 {
     margin-top: 5px;
     font-family: $bold;
-    // color: $sec_prado;
     padding: 0 20vw;
     font-size: 20px;
 
@@ -28,13 +26,46 @@ h2 {
     }
 }
 
-.al {
-    display: flex;
-    text-align: center;
-    gap: 15px;
+.subtitulo {
+    margin: 50px 0 30px 0;
+    font-size: 25px;
+    font-family: $extra_bold;
 }
 
 .section {
+    &__video {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 0 5vw;
+        margin: 40px 0;
+
+        iframe {
+
+            @media screen and (max-width: 999px) {
+                width: 560px;
+                height: 314px;
+            }
+
+            @media screen and (max-width: 640px) {
+                width: 400px;
+                height: 225px;
+            }
+
+            @media screen and (max-width: 428px) {
+                width: 300px;
+                height: 169px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            padding: 0 5vw;
+        }
+
+        @media screen and (max-width: 428px) {
+            padding: 0 2vw;
+        }
+    }
     &__ubicacion {
         padding: 0 5vw 20px 5vw;
         margin-bottom: 40px;
@@ -61,7 +92,6 @@ h2 {
     }
     &__caracteristicas {
         padding: 20px 10vw 60px 10vw;
-        // background: $terc_prado;
         h3 {
             margin-bottom: 5px;
         }
@@ -183,19 +213,6 @@ h2 {
                 padding: 0 5vw;
             }
 
-            .titulo__asesoramiento {
-                font-size: 30px;
-                padding: 0;
-                margin: 60px 0 10px 0;
-                @media screen and (max-width: 768px) {
-                    font-size: 21px;
-                }
-
-                @media screen and (max-width: 428px) {
-                    font-size: 17px;
-                }
-            }
-
             h4 {
                 margin: 0;
                 font-size: 20px;
@@ -214,6 +231,25 @@ h2 {
     }
 }
 
+.titulo__asesoramiento {
+    font-size: 30px;
+    padding: 0;
+    margin: 60px 0 10px 0;
+    @media screen and (max-width: 768px) {
+        font-size: 21px;
+    }
+
+    @media screen and (max-width: 428px) {
+        font-size: 17px;
+    }
+}
+
+.info__adicional {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
 .cont__tabla {
     width: 100%;
     overflow-x:auto;
@@ -222,13 +258,10 @@ h2 {
 .tabla {
     border-collapse: collapse;
     width: 100%;
-    // th:not(:first-child), td {
-    //     border: 1px solid $sec_crisostomo;
-    // }
+    
     thead {
         color: $white;
         th:not(:first-child) {
-            // background-color: $cuat_crisostomo;
             padding: 5px 40px;
         }
     }
@@ -236,12 +269,10 @@ h2 {
     tbody {
         color: $negro;
         td {
-            // background-color: lighten($sec_crisostomo, 60);
             padding: 5px 15px;
             text-align: center;
 
             &:first-child {
-                // background-color: $cuat_crisostomo;
                 color: $white;
                 padding: 0 40px;
                 text-align: left;
@@ -251,24 +282,48 @@ h2 {
     }
 }
 
-.subtitulo {
-    margin: 50px 0 30px 0;
-    font-size: 25px;
-    font-family: $extra_bold;
-}
-
 .list {
+    &__ubicacion {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+
+        h3 {
+            font-family: $bold;
+        }
+    }
+
     &__caracteristicas {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
+        gap: 20px 10px;
 
-        @media screen and (max-width: 768px) {
-            grid-template-columns: 1fr;
+        .al {
+            display: flex;
+            // text-align: center;
+            gap: 5px;
+        
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            h3 {
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                    text-align: center;
+                }
+            }
         }
 
         .cont__img {
             height: 25px;
+
+            @media screen and (max-width: 768px) {
+                height: 40px;
+            }
 
             img {
                 height: 100%;
@@ -289,22 +344,6 @@ h2 {
             gap: 30px;
         }
     }
-
-    &__ubicacion {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-
-        h3 {
-            font-family: $bold;
-        }
-    }
-
-}
-
-.img__caracteristicas {
-    background-color: darken($sec_prado, 10);
 }
 
 .carac {
@@ -320,9 +359,5 @@ h2 {
 
     &__secundaria {
         color: lighten($negro, 10);
-
-        @media screen and (max-width: 768px) {
-            // display: none;
-        }
     }
 }

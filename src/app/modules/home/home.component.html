@@ -3,11 +3,19 @@
 </section>
 <app-cards-proyectos></app-cards-proyectos>
 <section class="cont__img">
-    <img src="./../../../assets/img/msc/mapa_proyectos.png" alt="">
+    <img src="./../../../assets/img/msc/mapa_proyectos.webp" alt="">
 </section>
 <section class="section__pasos">
     <h2 class="subtitulo">Pasos para <span>adquirir tu Lote</span></h2>
     <ul>
-        <li></li>
+        <li *ngFor="let paso of listPasos">
+            <div class="cont__img">
+                <img [src]="paso.img" alt="">
+            </div>
+            <!-- <div class="cont__texto">
+                <h3>{{ paso.nombre }}</h3>
+                <p>{{ paso.texto }}</p>
+            </div> -->
+        </li>
     </ul>
 </section>

@@ -1,17 +1,50 @@
 @import '_variables';
 
 .section {
-
     &__historia {
         height: 90vh;
         width: 100%;
         position: relative;
+
+        @media screen and (max-width: 768px) {
+            height: 100%;
+        }
 
         img {
             object-fit: cover;
             object-position: center top;
             width: 100%;
             height: 100%;
+        }
+    }
+
+    &__nosotros {
+        padding: 35px 13vw;
+
+        @media screen and (max-width: 768px) {
+            padding: 0px 5vw 30px 5vw;
+        }
+    }
+
+    &__valores {
+        padding: 35px 8vw;
+
+        @media screen and (max-width: 768px) {
+            padding: 35px 2vw;
+        }
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            color: $sec_crisostomo;
+            font-family: $bold;
+        }
+    }
+
+    &__oficinas {
+        padding: 60px 18vw;
+
+        @media screen and (max-width: 768px) {
+            padding: 30px 5vw;
         }
     }
 
@@ -25,25 +58,6 @@
             width: 100%;
         }
     }
-
-    &__nosotros {
-        padding: 35px 13vw;
-    }
-
-    &__valores {
-        padding: 35px 8vw;
-        h2 {
-            text-align: center;
-            font-size: 30px;
-            color: $sec_crisostomo;
-            font-family: $bold;
-            // font-weight: bold;
-        }
-    }
-
-    &__oficinas {
-        padding: 60px 18vw;
-    }
 }
 
 .cont__info {
@@ -53,11 +67,43 @@
     width: 40%;
     text-align: center;
 
+    @media screen and (max-width: 768px) {
+        top: 25%;
+        left: 20px;
+    }
+
+    @media screen and (max-width: 638px) {
+        top: 20%;
+        left: 10px;
+        
+    }
+
+    @media screen and (max-width: 578px) {
+        top: 15%;
+    }
+
+    @media screen and (max-width: 511px) {
+        top: 10%;
+        width: 45%;
+    }
+
+    @media screen and (max-width: 494px) {
+        top: 5%;
+    }
+
     h1 {
         font-weight: 900;
         font-size: 60px;
         margin-bottom: 15px;
         font-family: $extra_bold;
+
+        @media screen and (max-width: 768px) {
+            font-size: 30px !important;
+        }
+
+        @media screen and (max-width: 494px) {
+            font-size: 25px !important;
+        }
     }
 
     h1, h2 {
@@ -67,6 +113,14 @@
     h2 {
         margin-bottom: 10px;
         font-size: 22px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 494px) {
+            font-size: 15px;
+        }
     }
 
     span {
@@ -77,6 +131,10 @@
     p {
         text-align: justify;
         text-align-last: center;
+
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
     }
 }
 
@@ -86,6 +144,10 @@
         background-color: $cuat_crisostomo;
         display: flex;
         align-items: center;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+        }
     }
 
     &__valores {
@@ -93,6 +155,55 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 3vw;
         margin: 30px 0 20px 0;
+
+        @media screen and (max-width: 1020px) {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 5vw;
+        }
+
+        @media screen and (max-width: 500px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .card__valor {
+            position: relative;
+            background: $cuat_crisostomo;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            color: $terc_crisostomo;
+            font-size: 15px;
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+        
+            &:hover {
+                img {
+                    opacity: 0.8;
+                }
+            }
+        
+            h3 {
+                width: 100%;
+                position: absolute;
+                color: $white;
+                bottom: 0;
+                left: 0;
+                z-index: 10;
+                padding: 0 15px;
+                font-size: 20px;
+                background: $cuat_crisostomo;
+            }
+        
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+                opacity: 0.5;
+            }
+        }
     }
 
     &__oficinas {
@@ -100,63 +211,11 @@
         grid-template-columns: repeat(2, 1fr);
         background-color: lighten($gris, 40);
         position: relative;
-    }
-}
 
-.mision-vision {
-    padding: 50px 70px;
-    text-align: center;
-
-    &:not(:first-child) {
-        border-left: 2px solid $gris;
-    }
-
-    h2 {
-        color: $white;
-        margin-bottom: 10px;
-    }
-
-    p {
-        color: darken($white, 20);
-    }
-}
-
-.card__valor {
-    position: relative;
-    background: $cuat_crisostomo;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    color: $terc_crisostomo;
-    font-size: 15px;
-    width: 100%;
-    height: 300px;
-    border-radius: 15px;
-    overflow: hidden;
-
-    &:hover {
-        img {
-            opacity: 0.8;
+        @media screen and (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
         }
-    }
-
-    h3 {
-        position: absolute;
-        color: $white;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
-        padding: 0 15px;
-        font-size: 20px;
-        background: $cuat_crisostomo;
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-        opacity: 0.5;
     }
 }
 
@@ -190,6 +249,37 @@
             text-decoration: underline;
         }
     }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 10px;
+    }
+}
+
+.mision-vision {
+    padding: 50px 70px;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        padding: 50px 20px;
+    }
+
+    &:not(:first-child) {
+        border-left: 2px solid $gris;
+
+        @media screen and (max-width: 768px) {
+            border-left: none;
+            border-top: 2px solid $gris;
+        }
+    }
+
+    h2 {
+        color: $white;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: darken($white, 20);
+    }
 }
 
 .linea {
@@ -199,4 +289,13 @@
     position: absolute;
     top: 15%;
     left: 50%;
+
+    @media screen and (max-width: 768px) {
+        height: 2px;
+        width: 80%;
+        background: #ffa217;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+    }
 }

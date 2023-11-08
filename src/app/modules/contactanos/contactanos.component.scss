@@ -1,0 +1,28 @@
+@import '_variables';
+
+div {
+    padding: 10px 10vw;
+}
+
+.titulo__asesoramiento {
+    color: $cuat_crisostomo;
+    text-align: center;
+    font-size: 30px;
+    padding: 0;
+    margin: 40px 0 0 0 ;
+    font-family: $extra_bold;
+    @media screen and (max-width: 768px) {
+        font-size: 21px;
+    }
+
+    @media screen and (max-width: 428px) {
+        font-size: 17px;
+    }
+}
+
+.subtitulo {
+    margin: 10px 0 10px 0;
+    font-size: 25px;
+    color: $terc_crisostomo;
+    text-align: center;
+}

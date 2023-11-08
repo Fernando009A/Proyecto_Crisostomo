@@ -11,15 +11,34 @@ import { ListaCiudades } from 'src/app/mocks/ciudades.mock';
 })
 export class ContactoComponent implements OnInit {
 
-  // CM: El elemento padre transmite la informacion
+  /**
+  * Propiedad de entrada que recibe una imagen de tipo IImagenInterface o es indefinida.
+  */
   @Input() imagenInput: IImagenInterface | undefined;
-  imagenPrincipal: string | undefined;
+
+  
+  /**
+  * Propiedad que almacena la URL de la imagen principal o es indefinida.
+  */
+  imagenPrincipal: string | undefined = "assets/img/msc/contactanos_df.webp";
+
+  /**
+  * Arreglo que almacena la lista de ciudades disponibles, inicializado con valores predefinidos.
+  */
   ciudades: ICiudadesInterface[] = ListaCiudades;
 
+  /**
+  * FormGroup que representa el formulario de contacto.
+  */
   formContacto: FormGroup = new FormGroup({});
 
   constructor(private formBuilder:FormBuilder) {}
 
+  /**
+  * Hook del ciclo de vida que se llama después de que Angular haya inicializado todas las propiedades vinculadas a datos de un componente.
+  * En este método, se crea y configura el formulario 'formContacto' utilizando FormBuilder.
+  * Además, si se proporciona una imagen de entrada, se asigna su URL a 'imagenPrincipal'.
+  */
   ngOnInit(): void {
     this.formContacto = this.formBuilder.group(
       {
@@ -35,7 +54,6 @@ export class ContactoComponent implements OnInit {
     )
 
     if(this.imagenInput) {
-      console.log(this.imagenInput);
       this.imagenPrincipal = this.imagenInput.url
     }
   }
@@ -72,7 +90,10 @@ export class ContactoComponent implements OnInit {
     return this.formContacto.get('mensaje');
   }
 
-  submitFirmulario() {
+  /**
+  * Método que se llama al enviar el formulario.
+  */
+  submitFormulario() {
     console.table(this.formContacto.value);
   }
 }

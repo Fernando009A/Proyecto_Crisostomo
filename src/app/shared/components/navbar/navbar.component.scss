@@ -23,6 +23,26 @@
     }
 }
 
+.btn__navegacion {
+    display: none;
+    
+    svg {
+        border-radius: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        text-align: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+
+    &:hover {
+        filter: invert(10%);
+    }
+}
+
 .lista_navegacion {
     display: flex;
     justify-content: space-between;
@@ -32,41 +52,45 @@
     @media screen and (max-width: 768px) {
         display: none;
     }
-}
 
-.button__nav {
-    display: flex;
-    flex-direction: column;
-    padding: 6% 2px 1px 2px;
-    gap: 2px;
-    background: none;
-    font-size: 11px;
-    color: $cuat_crisostomo;
-    transition: all .1s ease-in;
-    cursor: pointer;
+    .button__nav {
+        display: flex;
+        flex-direction: column;
+        padding: 6% 2px 1px 2px;
+        gap: 2px;
+        background: none;
+        font-size: 11px;
+        color: $cuat_crisostomo;
+        transition: all .1s ease-in;
+        cursor: pointer;
+    
+        &:hover {
+            color: $sec_crisostomo;
 
-    &:hover {
-        .bottom__line {
-            background-color: $sec_crisostomo;
+            .bottom__line {
+                background-color: $sec_crisostomo;
+            }  
         }
-            
-        color: $sec_crisostomo;
     }
-}
 
-.bottom__line {
-    height: 4px;
-    border-radius: 5px;
-    width: 100%;
-    background-color: $white;
-    transition: all .1s ease-in;
-    cursor: pointer;
+    .bottom__line {
+        height: 4px;
+        border-radius: 5px;
+        width: 100%;
+        background-color: $white;
+        transition: all .1s ease-in;
+        cursor: pointer;
+    }
 }
 
 /* Redes Sociales */
 .redes {
-    &_sociales {
+    &__sociales {
         height: 100%;
+
+        @media screen and (max-width: 464px) {
+            display: none;
+        }
     }
 
     &__list {
@@ -77,12 +101,11 @@
 }
 
 .red {
-    &__item {
+    &__item, &__btn {
         height: 100%;
     }
 
     &__btn {
-        height: 100%;
         cursor: pointer;
 
         img {
@@ -94,4 +117,20 @@
             }
         }
     }
+}
+
+.desplegable {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background: $white;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    padding: 30px 10px;
+    z-index: 1;
+}
+
+.cerrar {
+    display: none;
 }

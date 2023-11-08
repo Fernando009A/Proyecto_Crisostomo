@@ -3,7 +3,16 @@
     <h2 #subtitulo>{{ infoProyecto.resumen }}</h2>
     <app-galeria [listImagenes]="infoProyecto.imagenes"></app-galeria>
     <app-estructura [estructuraProyecto]="infoProyecto.estructura"></app-estructura>
-    <section class="section__ubicacion">
+
+    <!-- CM: Seccion Video -->
+    <section class="section__video">
+        <iframe *ngIf="infoProyecto.id == 1" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCrisostomoInmobiliaria%2Fvideos%2F834538154805464%2F&show_text=false&width=560&t=0" width="840" height="471" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
+        <iframe *ngIf="infoProyecto.id == 3" src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCrisostomoInmobiliaria%2Fvideos%2F1389952465282462%2F&show_text=false&width=560&t=0" width="840" height="471" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+    </section>
+    
+    <!-- CM: Seccion Ubicacion -->
+    <section *ngIf="infoProyecto.video" class="section__ubicacion">
         <h2 #subtitulo class="subtitulo">Ubicacion</h2>
         <div class="info__ubicacion">
             <div class="cont__img">
@@ -37,7 +46,7 @@
                     <h3 class="carac__principal">{{ item.caracteristica }}</h3>
                 </div>
                 <!-- CM: Parte de Informacion Adicional de cada caracteristica, si la tiene -->
-                <ul *ngIf="item.adicional">
+                <ul class="info__adicional" *ngIf="item.adicional">
                     <li class="carac__secundaria"  *ngFor="let a of item.adicional">
                         <h4>- {{ a }}</h4>
                     </li>
@@ -46,7 +55,8 @@
         </ul>
     </section>
 
-    <section class="section__precios">
+    <!-- CM: Seccion precio - inicial - cuotas -->
+    <!-- <section class="section__precios">
         <h2 #subtitulo class="subtitulo">Precio de Lotes</h2>
         <div>
             <h3 #subtitulo2>Precios por Lotes</h3>
@@ -117,12 +127,13 @@
         </div>
 
         <div>
-            <h3 #subtitulo2>Separación: <span>{{ infoProyecto.aspectoComercial.separacion }} ({{ infoProyecto.aspectoComercial.adicional }})</span></h3>
+            <h3 #subtitulo2>Separación: <span>S/.{{ infoProyecto.aspectoComercial.separacion }} ({{ infoProyecto.aspectoComercial.adicional }})</span></h3>
             <h3 #subtitulo2>Intereses <span>{{ infoProyecto.aspectoComercial.intereses }}</span></h3>
         </div>
-    </section>
+    </section> -->
 
-    <section class="section__legal">
+    <!-- CM: Seccion Informacion Legal -->
+    <!-- <section class="section__legal">
         <h2 #subtitulo class="subtitulo">Aspecto Legal</h2>
         <div>
             <h3 #subtitulo2>Proyecto</h3>
@@ -133,17 +144,19 @@
             <h4>-{{ infoProyecto.aspectoLegal.lotes }}</h4>
         </div>
         <div>
-            <h3 #subtitulo2>Contactos</h3>
+            <h3 #subtitulo2>Contratos</h3>
             <div *ngFor="let contrato of infoProyecto.aspectoLegal.contratos">
                 <h4>-{{ contrato.nombre }}: <span>{{ contrato.descripcion }}</span></h4>
             </div>
         </div>
-    </section>
+    </section> -->
 
+    <!-- CM: Seccion Plano del Poyecto -->
     <section class="section__plano">
         <img [src]="infoProyecto.estructura.img" alt="">
     </section>
 
+    <!-- CM: Seccion Cuentas -->
     <section class="section__cuentas">
         <h2 #subtitulo class="subtitulo">Cuentas de Deposito</h2>
         <ul class="list__cuentas">
@@ -155,7 +168,8 @@
         </ul>
     </section>
 
-    <section #bgCaracteristica class="section__informacion">
+    <!-- CM: Seccion Informacion -->
+    <!-- <section #bgCaracteristica class="section__informacion">
         <h2 #subtitulo class="subtitulo">Información</h2>
         <div>
             <h3>Empresa: <span>{{ infoProyecto.informacion.empresa }}</span></h3>
@@ -165,8 +179,9 @@
             <h3>Periodo de Gracia: <span>{{ infoProyecto.informacion.pGracia | date:'d \'de\' MMMM \'del\' y' }}</span></h3>
             <h3>Zorem: <span>{{ infoProyecto.informacion.zorem }}</span></h3>
         </div>
-    </section>
+    </section> -->
 
+    <!-- CM: Seccion Contacto -->
     <section class="section__contacto">
         <div>
             <h2 #subtitulo2 class="titulo__asesoramiento">Te asesoramos para escoger tu mejor opción</h2>

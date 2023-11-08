@@ -1,6 +1,8 @@
 <footer class="footer">
+    <!-- Sección de información de la empresa -->
     <section class="footer__info">
         <div class="info__empresa">
+            <!-- Logo de la empresa -->
             <div>
                 <svg width="194" height="53" viewBox="0 0 194 53" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -66,7 +68,9 @@
                         fill="white" />
                 </svg>
             </div>
+            <!-- Derechos de autor y año -->
             <h4 class="copyright">&copy;2023 Crisóstomo Inmobiliaria. <br>Todos los derechos reservados.</h4>
+            <!-- Lista de enlaces a redes sociales -->
             <ul class="redes__list">
                 <li class="red__item" *ngFor="let red of list_redes">
                     <button (click)="abrirEnOtraPestana(red.link)" class="red__btn">
@@ -75,20 +79,24 @@
                 </li>
             </ul>
         </div>
+        <!-- Información de compañía -->
         <div class="info__support">
-            <ul class="cont__compañia">
+            <!-- Lista de enlaces de compañía -->
+            <div class="cont__compañia">
                 <h4 (click)="OpenCloseFooter(0)" class="titulo__sup">Compañia</h4>
                 <ul class="lista__compañia" #lista>
                     <li [routerLink]="item.url" (click)="scrollToTop()" *ngFor="let item of list_compania">{{ item.nombre }}</li>
                 </ul>
-            </ul>
-            <ul class="cont__soporte">
+            </div>
+            <!-- Lista de enlaces de soporte -->
+            <div class="cont__soporte">
                 <h4 (click)="OpenCloseFooter(1)" class="titulo__sup">Soporte</h4>
                 <ul class="lista__soporte" #lista>
                     <li *ngFor="let item of list_soporte">{{ item.nombre }}</li>
                 </ul>
-            </ul>
-            <ul class="cont__direcciones final__box">
+            </div>
+            <!-- Lista de enlaces de direcciones -->
+            <div class="cont__direcciones final__box">
                 <h4 (click)="OpenCloseFooter(2)" class="titulo__sup">Direcciones</h4>
                 <ul class="lista__direcciones" #lista>
                     <li (click)="abrirEnOtraPestana(item.url)" class="direcciones" *ngFor="let item of list_direcciones">
@@ -96,10 +104,11 @@
                         <p>{{ item.direccion }}</p>
                     </li>
                 </ul>
-            </ul>
+            </div>
         </div>
     </section>
-    <section class="info__politicas">
+    <!-- Información de políticas y derechos de autor -->
+    <section class="footer__politicas">
         <p>*Las imágenes, planos, medidas y áreas contenidas en esta página son referenciales y pueden presentar modificaciones en el transcurso del proyecto. Asimismo, el contenido gráfico es referencial, por lo que puede presentar elementos de apreciación estética que son interpretación del artista gráfico y que no comprometen a la promotora.</p>
     </section>
 </footer>

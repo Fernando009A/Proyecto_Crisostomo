@@ -32,6 +32,7 @@ export const ListaProyectos: IProyectoInterface[] = [
                 url: "assets/img/proyectos/estancia_prado/6.webp"
             },
         ],
+        video: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCrisostomoInmobiliaria%2Fvideos%2F834538154805464%2F&show_text=false&width=560&t=0",
         ubicacion: {
             localizacion: "Pachinga, Pisco, Ica",
             direccion: "CAMPO VERDE, Lotes N°3-B y 3-C",
@@ -235,6 +236,7 @@ export const ListaProyectos: IProyectoInterface[] = [
                 url: "assets/img/proyectos/arboleda/6.webp"
             },
         ],
+        video: "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCrisostomoInmobiliaria%2Fvideos%2F1389952465282462%2F&show_text=false&width=560&t=0",
         ubicacion: {
             localizacion: "Pisco, Pisco, Ica",
             direccion: "Parcela N°58 - Caucato Alto",
@@ -395,6 +397,7 @@ export const ListaProyectos: IProyectoInterface[] = [
                 url: "assets/img/proyectos/arboleda/6.webp"
             },
         ],
+        video: "",
         ubicacion: {
             localizacion: "Santa Rosa, Pisco, Ica",
             direccion: "Av. Las Americas con la Av. San Isidro",

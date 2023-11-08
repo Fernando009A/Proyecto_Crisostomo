@@ -1,12 +1,28 @@
 <header class="header">
-    <button aria-label="boton_index" routerLink="/" class="logo__cont">
+    <button (click)="closeMenu()" aria-label="boton_index" routerLink="/" class="logo__cont">
         <img src="assets/img/logos/logo_crisostomo.png" alt="">
     </button>
 
+    <!-- Este código representa la plantilla HTML para el componente de la barra de navegación. Incluye un botón para abrir y cerrar el menú, una lista de elementos de navegación y un bucle para mostrar cada elemento. -->
     <nav class="navegacion">
-        <ul class="lista_navegacion">
+        <button (click)="openCloseMenu()" class="btn__navegacion" [disabled]="getScreenWidth > 768">
+            <svg #abrir width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" fill="white"/>
+                <path d="M6 12H18" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 15.5H18" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 8.5H18" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg #cerrar class="cerrar" width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" fill="white"/>
+                <path d="M7 17L16.8995 7.10051" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 7.00001L16.8995 16.8995" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <!-- Este bloque de código muestra una barra de navegación con una lista de botones que, al hacer clic en ellos, navegan a diferentes URL y hacen desplazarse hacia la parte superior de la página -->
+        <ul #listaNavegacion class="lista_navegacion">
             <li *ngFor="let nav of list_navegacion">
-                <button aria-label="boton_navegacion" [routerLink]="nav.url" (click)="scrollToTop()" class="button__nav">
+                <button class="button__nav" (click)="openCloseMenu()" aria-label="boton_navegacion" [routerLink]="nav.url" (click)="scrollToTop()">
                     <h2>{{ nav.nombre }}</h2>
                     <div class="bottom__line"></div>
                 </button>
@@ -14,7 +30,8 @@
         </ul>
     </nav>
 
-    <div class="redes_sociales">
+    <!-- Este bloque de código muestra una lista de iconos de redes sociales con sus respectivos enlaces. -->
+    <div class="redes__sociales">
         <ul class="redes__list">
             <li class="red__item" *ngFor="let red of list_redes">
                 <button aria-label="boton_red_social" (click)="abrirEnOtraPestana(red.link)" class="red__btn">

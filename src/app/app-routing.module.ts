@@ -4,6 +4,8 @@ import { HomeComponent } from './modules/home/home.component';
 import { NosotrosComponent } from './modules/nosotros/nosotros.component';
 import { ProyectoComponent } from './modules/proyecto/proyecto.component';
 import { VendeComponent } from './modules/vende/vende.component';
+import { BlogComponent } from './modules/blog/blog.component';
+import { ContactanosComponent } from './modules/contactanos/contactanos.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'vende',
     component: VendeComponent
+  },
+  {
+    path: 'blog',
+    component: BlogComponent
+  },
+  {
+    path: 'contactanos',
+    component: ContactanosComponent
   }
 ];
 

@@ -42,7 +42,6 @@
         }
     }
 
-
     &__btn {
         cursor: pointer;
         height: 100%;
@@ -69,17 +68,5 @@
                 filter: brightness(0.7);
             }
         }
-    }
-
-    &__promocion {
-        background-color: rgba(0, 0, 0, 0.5);
-        height: 100px;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
-        color: $white;
-        padding: 10px 20px;
     }
 }

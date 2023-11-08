@@ -12,8 +12,7 @@ export class CardsProyectosComponent {
   listCards: IProyectoInterface[] = ListaProyectos;
 
   scrollToTop() {
-    window.scrollTo(0, 0); // Desplazar la página al principio
+    window.scrollTo(0, 0);
   }
-
 
 }
