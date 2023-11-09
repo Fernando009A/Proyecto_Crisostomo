@@ -10,8 +10,6 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EstructuraComponent } from './components/estructura/estructura.component';
 
-
-
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -25,7 +23,7 @@ import { EstructuraComponent } from './components/estructura/estructura.componen
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     NavbarComponent,
@@ -33,7 +31,7 @@ import { EstructuraComponent } from './components/estructura/estructura.componen
     FooterComponent,
     GaleriaComponent,
     ContactoComponent,
-    EstructuraComponent
+    EstructuraComponent,
   ]
 })
 export class SharedModule { }

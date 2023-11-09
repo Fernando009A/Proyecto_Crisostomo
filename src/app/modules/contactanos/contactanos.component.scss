@@ -12,11 +12,11 @@ div {
     margin: 40px 0 0 0 ;
     font-family: $extra_bold;
     @media screen and (max-width: 768px) {
-        font-size: 21px;
+        font-size: 25px;
     }
 
     @media screen and (max-width: 428px) {
-        font-size: 17px;
+        font-size: 22px;
     }
 }
 
@@ -25,4 +25,12 @@ div {
     font-size: 25px;
     color: $terc_crisostomo;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 428px) {
+        font-size: 18px;
+    }
 }
