@@ -3,7 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ICiudadesInterface } from 'src/app/core/models/ICiudades.interface';
 import { IImagenInterface } from 'src/app/core/models/IProyecto.interface';
 import { ListaCiudades } from 'src/app/mocks/ciudades.mock';
+import Swal from 'sweetalert2';
 
+// CM: Nuevo
+import * as emailjs from 'emailjs-com';
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
@@ -15,12 +18,13 @@ export class ContactoComponent implements OnInit {
   * Propiedad de entrada que recibe una imagen de tipo IImagenInterface o es indefinida.
   */
   @Input() imagenInput: IImagenInterface | undefined;
+  @Input() nombreProyecto: string | undefined;
 
   
   /**
   * Propiedad que almacena la URL de la imagen principal o es indefinida.
   */
-  imagenPrincipal: string | undefined = "assets/img/msc/contactanos_df.webp";
+  imagenPrincipal: string | undefined = "assets/img/msc/contactanos.webp";
 
   /**
   * Arreglo que almacena la lista de ciudades disponibles, inicializado con valores predefinidos.
@@ -49,13 +53,10 @@ export class ContactoComponent implements OnInit {
         correo: ['',[Validators.required, Validators.email]],
         ciudad: ['',[Validators.required]],
         direccion: ['', [Validators.required]],
-        mensaje: ['']
+        mensaje: [''],
+        proyecto: [this.nombreProyecto]
       }
     )
-
-    if(this.imagenInput) {
-      this.imagenPrincipal = this.imagenInput.url
-    }
   }
 
   get nombre() {
@@ -93,7 +94,56 @@ export class ContactoComponent implements OnInit {
   /**
   * Método que se llama al enviar el formulario.
   */
+  // submitFormulario() {
+  //   console.table(this.formContacto.value);
+  // }
+
   submitFormulario() {
-    console.table(this.formContacto.value);
+    // Configura tu servicio, plantilla y parámetros de EmailJS
+    const emailParams = {
+      service_id: 'service_w04m68l', // Reemplaza con tu servicio ID de EmailJS
+      template_id: 'template_lq5mlcd', // Reemplaza con tu plantilla ID de EmailJS
+      user_id: 'feIWJufeb5K5O1w9Y', // Reemplaza con tu usuario ID de EmailJS
+      template_params: {
+        to_name: 'Inmobiliaria Crisostomo',
+        from_name: this.formContacto.value.nombre,
+        mensaje: this.formContacto.value.mensaje,
+        nombre: this.formContacto.value.nombre,
+        apellidos: this.formContacto.value.apellidos,
+        dni: this.formContacto.value.dni,
+        celular: this.formContacto.value.celular,
+        ciudad: this.formContacto.value.ciudad,
+        correo: this.formContacto.value.correo,
+        proyecto: this.formContacto.value.proyecto,
+      }
+    };
+
+    // Envia el correo electrónico
+    emailjs.send(emailParams.service_id, emailParams.template_id, emailParams.template_params, emailParams.user_id)
+      .then((response) => {
+        console.log('Correo electrónico enviado:', response);
+        // Puedes agregar lógica adicional después de enviar el correo
+        this.formContacto.reset();
+        // Mostrar SweetAlert de éxito
+        Swal.fire({
+          title: 'Formulario enviado',
+          timer: 1500, // Temporizador en milisegundos (en este caso, 1.5 segundos)
+          text: 'El formulario se envió correctamente.',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        });
+      })
+      .catch((error) => {
+        console.error('Error al enviar el correo electrónico:', error);
+        // Puedes manejar errores aquí, por ejemplo, mostrar un mensaje al usuario
+        Swal.fire({
+          title: 'Error al enviar el formulario',
+          text: 'Hubo un error al enviar el formulario.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+          timer: 1500,
+          timerProgressBar: true,
+        });
+      });
   }
 }

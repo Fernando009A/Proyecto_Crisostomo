@@ -1,12 +1,12 @@
 <div class="cont__info">
     <h1>Vende tu <span>Terreno</span></h1>
-    <h2>Completa el formulario a continuación y nuestros asesores te contactarán para ayudarte a vender tu terreno de manera exitosa. Te ofrecemos un servicio de calidad y una experiencia sin igual en el proceso de venta de propiedades.</h2>
+    <h2>Completa el formulario a continuación y nuestros asesores te contactarán. Te ofrecemos un servicio de calidad y una experiencia sin igual en el proceso de venta de propiedades.</h2>
 </div>
 <section class="section__contacto">
     <div class="cont__img">
-        <img src="./../../../assets/img/proyectos/arboleda/9.webp" alt="">
+        <img src="./../../../assets/img/msc/contactanos_vt.webp" alt="">
     </div>
-    <form [formGroup]="formContacto" class="form">
+    <form [formGroup]="formContacto" (submit)="submitFormulario()" class="form">
         <div>
             <h3>Datos Personales</h3>
             <div class="mitad">

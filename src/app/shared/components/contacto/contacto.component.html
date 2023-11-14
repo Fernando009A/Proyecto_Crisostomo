@@ -3,7 +3,7 @@
   <div class="cont__img">
     <img [src]="imagenPrincipal" alt="" />
   </div>
-  <form [formGroup]="formContacto" class="form">
+  <form [formGroup]="formContacto" (submit)="submitFormulario()" class="form">
     <div class="mitad">
       <!-- CM: Field Nombres -->
       <div class="form__field">
@@ -129,7 +129,7 @@
       </label>
       <select id="ciudad" formControlName="ciudad">
         <option value="0" disabled selected>Seleccione una Ciudad</option>
-        <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">
+        <option *ngFor="let ciudad of ciudades" [value]="ciudad.ciudad">
           {{ ciudad.ciudad }}
         </option>
       </select>

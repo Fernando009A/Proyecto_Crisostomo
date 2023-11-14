@@ -374,27 +374,27 @@ export const ListaProyectos: IProyectoInterface[] = [
             // CM: Cambiar por las de Cosa azul
             {
                 id: 1,
-                url: "assets/img/proyectos/arboleda/1.webp"
+                url: "assets/img/proyectos/costa_azul/1.webp"
             },
             {
                 id: 2,
-                url: "assets/img/proyectos/arboleda/2.webp"
+                url: "assets/img/proyectos/costa_azul/2.webp"
             },
             {
                 id: 3,
-                url: "assets/img/proyectos/arboleda/3.webp"
+                url: "assets/img/proyectos/costa_azul/3.webp"
             },
             {
                 id: 4,
-                url: "assets/img/proyectos/arboleda/4.webp"
+                url: "assets/img/proyectos/costa_azul/4.webp"
             },
             {
                 id: 5,
-                url: "assets/img/proyectos/arboleda/5.webp"
+                url: "assets/img/proyectos/costa_azul/5.webp"
             },
             {
                 id: 6,
-                url: "assets/img/proyectos/arboleda/6.webp"
+                url: "assets/img/proyectos/costa_azul/6.webp"
             },
         ],
         video: "",

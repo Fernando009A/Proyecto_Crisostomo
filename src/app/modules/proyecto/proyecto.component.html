@@ -12,7 +12,7 @@
     </section>
     
     <!-- CM: Seccion Ubicacion -->
-    <section *ngIf="infoProyecto.video" class="section__ubicacion">
+    <section class="section__ubicacion">
         <h2 #subtitulo class="subtitulo">Ubicacion</h2>
         <div class="info__ubicacion">
             <div class="cont__img">
@@ -188,6 +188,6 @@
             <h4 class="subtitulo" #subtitulo>Ponemos a su disposición un equipo altamente capacitado que resolverá
             cualquier duda o consulta.</h4>
         </div>
-        <app-contacto [imagenInput]="infoProyecto.imagenes[3]"></app-contacto>
+        <app-contacto [imagenInput]="infoProyecto.imagenes[3]" [nombreProyecto]="infoProyecto.nombre" ></app-contacto>
     </section>
 </div>
