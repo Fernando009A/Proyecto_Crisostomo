@@ -101,9 +101,9 @@ export class ContactoComponent implements OnInit {
   submitFormulario() {
     // Configura tu servicio, plantilla y parámetros de EmailJS
     const emailParams = {
-      service_id: 'service_w04m68l', // Reemplaza con tu servicio ID de EmailJS
-      template_id: 'template_lq5mlcd', // Reemplaza con tu plantilla ID de EmailJS
-      user_id: 'feIWJufeb5K5O1w9Y', // Reemplaza con tu usuario ID de EmailJS
+      service_id: 'service_seh9pxp', // Reemplaza con tu servicio ID de EmailJS
+      template_id: 'template_mtptkvu', // Reemplaza con tu plantilla ID de EmailJS
+      user_id: 'p0n92MFnnTLRJ6Def', // Reemplaza con tu usuario ID de EmailJS
       template_params: {
         to_name: 'Inmobiliaria Crisostomo',
         from_name: this.formContacto.value.nombre,

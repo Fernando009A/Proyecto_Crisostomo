@@ -107,9 +107,9 @@ export class VendeComponent implements OnInit {
   submitFormulario() {
     // Configura tu servicio, plantilla y parámetros de EmailJS
     const emailParams = {
-      service_id: 'service_d3jgns6', // Reemplaza con tu servicio ID de EmailJS
+      service_id: 'template_mtgpc6a', // Reemplaza con tu servicio ID de EmailJS
       template_id: 'template_qpjoln9', // Reemplaza con tu plantilla ID de EmailJS
-      user_id: 'i2MUqpC7r-KuX7UWM', // Reemplaza con tu usuario ID de EmailJS
+      user_id: 'l2WNvK8n8KRnvfI_7', // Reemplaza con tu usuario ID de EmailJS
       template_params: {
         to_name: 'Inmobiliaria Crisostomo',
         from_name: this.formContacto.value.nombre,
